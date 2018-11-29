@@ -10,6 +10,8 @@ import StateComponent from './components/stateComponent';
 import Training from './components/Training';
 import ParentComponent from './components/ParentComponent';
 import containerComponents from './components/containerComponents';
+import WrapperComponent from './components/containerComponents/WrapperComponent';
+import SharedComponent from './components/containerComponents/SharedComponent';
 
 class App extends Component {
   render() {
@@ -18,11 +20,13 @@ class App extends Component {
         <div>
           <Navigation />
           <Switch>
-            <Route path="/" component={containerComponents} exact /> 
+            <Route path="/" component={WrapperComponent} exact />
+            <Route path="/container" component={containerComponents} /> 
             <Route path="/Parent" component={ParentComponent} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/training" component={Training} />
+            <Route path="/new" component={SharedComponent}/> 
             <Route component={Error} />
           </Switch>
         </div>
