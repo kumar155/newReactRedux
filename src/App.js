@@ -12,6 +12,7 @@ import ParentComponent from './components/ParentComponent';
 import containerComponents from './components/containerComponents';
 import WrapperComponent from './components/containerComponents/WrapperComponent';
 import SharedComponent from './components/containerComponents/SharedComponent';
+import CounterComponent, { LifeCycle } from './components/LifeCycle';
 
 class App extends Component {
   render() {
@@ -20,7 +21,8 @@ class App extends Component {
         <div>
           <Navigation />
           <Switch>
-            <Route path="/" component={WrapperComponent} exact />
+            <Route path="/" component={CounterComponent} exact />
+            <Route path="/Wrapper" component={WrapperComponent} />
             <Route path="/container" component={containerComponents} /> 
             <Route path="/Parent" component={ParentComponent} />
             <Route path="/about" component={About} />
